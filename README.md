@@ -1,12 +1,79 @@
-# React + Vite
+# 🕌 Islamic Blog (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An Islamic-themed blog application frontend built using **React**, **Vite**, **Tailwind CSS**, and **Firebase Authentication**.
 
-Currently, two official plugins are available:
+🔗 **Live Website:** [https://islamic-blog.netlify.app](https://islamic-blog.netlify.app)  
+🔗 **Backend Repository:** https://github.com/RejwanulIslam/Islamic-Blog-Backend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧰 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- View all blog posts
+- Search and filter blogs by title or category
+- Wishlist functionality to save favorite blogs
+- Comment system
+- User authentication via Firebase
+- Responsive design for mobile and desktop
+- Backend API integration with secured JWT auth
+
+---
+
+## 🛠 Tech Stack
+
+- **React** – Frontend library
+- **Vite** – Fast build tool
+- **Tailwind CSS** – Utility-first styling
+- **DaisyUI** – Prebuilt components
+- **Firebase Authentication** – User login/signup
+- **Axios** – API requests
+- **React Router DOM** – Routing
+- **React Hot Toast** – Notifications
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repository
+
+``` bash
+git clone https://github.com/RejwanulIslam/Islamic-Blog-Fontend.git
+cd islamick-blog-frontend
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Start the Development Server
+bash
+Copy
+Edit
+npm run dev
+🔐 Authentication
+Firebase is used for user login and registration.
+
+On login, the frontend requests a JWT from the backend and stores it in an httpOnly cookie.
+
+Protected routes are restricted based on login status.
+
+🌐 Backend API Integration
+The frontend communicates with a secure Express + MongoDB backend.
+
+Example API Calls:
+Endpoint	Method	Description
+/allblog	GET	Get all blog posts
+/wishlist	POST	Add a blog to wishlist
+/comment/:id	GET	Get comments for a blog
+
+🔗 Backend Repository: https://github.com/RejwanulIslam/Islamic-Blog-Backend
+
+🎨 UI Design
+Built with Tailwind CSS and styled using DaisyUI components
+
+Fully responsive design
+
+Uses react-hot-toast for elegant notification popups
+
+🤝 Contributions
+Contributions are welcome!
+If you have ideas or issues, feel free to open an issue or submit a pull request.
