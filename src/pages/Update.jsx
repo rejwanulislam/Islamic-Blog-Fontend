@@ -15,7 +15,7 @@ export default function Update() {
 
     useEffect(() => {
         const singleIslamickBlogData = async () => {
-            const { data } = await axios.get(`http://localhost:5000/allblog/${Id}`)
+            const { data } = await axios.get(`https://islamick-blog-server.vercel.app/allblog/${Id}`)
             setblogdata(data)
         }
         singleIslamickBlogData()
@@ -44,7 +44,7 @@ export default function Update() {
 
         console.log({ title, image, shortdescription, longdescription, category })
         const blogData = { title, image, shortdescription, longdescription, category }
-        const { data } = await axios.patch(`http://localhost:5000/allblog/${Id}`, blogData)
+        const { data } = await axios.patch(`https://islamick-blog-server.vercel.app/allblog/${Id}`, blogData)
         console.log(data)
     }
     return (

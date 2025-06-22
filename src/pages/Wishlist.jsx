@@ -7,12 +7,14 @@ import UseAxiosSecure from '../hook/AxiosSeceut'
 
 export default function Wishlist() {
 
-    const { user } = useContext(authcontex)
+    const { user, loding } = useContext(authcontex)
     const [wishlist, setwishlist] = useState([])
     const axiossecure = UseAxiosSecure()
     useEffect(() => {
+        if (!user?.email) return
+
         const handlegetwishlist = async () => {
-            const { data } = await axiossecure.get(`https://islamick-blog-server.vercel.app/${user?.email}`, { withCredentials: true })
+            const { data } = await axiossecure.get(`https://islamick-blog-server.vercel.app/wishlist/${user?.email}`, { withCredentials: true })
             setwishlist(data)
         }
         handlegetwishlist()

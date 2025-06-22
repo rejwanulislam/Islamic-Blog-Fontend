@@ -7,6 +7,7 @@ export const authcontex = createContext()
 
 export default function AuthProvider({ children }) {
     const [user, setuser] = useState([])
+    const [loding, setloding] = useState(true)
       console.log(user)
     //email password login
     const creactUser = (email, password) => {
@@ -46,7 +47,7 @@ export default function AuthProvider({ children }) {
     }
     //logout
     const logoutuser = () => {
-        signOut(auth)
+      return signOut(auth)
     }
 
     //mange state
@@ -63,11 +64,13 @@ export default function AuthProvider({ children }) {
 
             } else {
                 console.log('User is signed out')
+                logoutuser()
                 const { data } = await axios.get('https://islamick-blog-server.vercel.app/logout', { withCredentials: true })
                 console.log(data)
                 setuser(currentuser)
 
             }
+            setloding(false)
         });
     }, [])
 
@@ -76,6 +79,7 @@ export default function AuthProvider({ children }) {
         updateprofile,
         user,
         setuser,
+        loding,
         logoutuser,
         loginuser,
         handlegoogleLogin
